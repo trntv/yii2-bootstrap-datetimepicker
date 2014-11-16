@@ -31,7 +31,8 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= $form->field($model, 'attribute')->widget('trntv\yii\datetimepicker\DatetimepickerWidget'); ?>```
+<?= $form->field($model, 'attribute')->widget('trntv\yii\datetimepicker\DatetimepickerWidget'); ?>
+```
 
 Options
 -------
