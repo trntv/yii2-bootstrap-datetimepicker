@@ -1,0 +1,21 @@
+{
+    "name": "trntv/yii2-bootstrap-datetimepicker",
+    "description": "Datetimepicker widget for Yii2 framework",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","datetimepicker","bootstrap","widget"],
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Eugine Terentev",
+            "email": "eugine@terentev.net"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "trntv\\yii\\datetimepicker\\": ""
+        }
+    }
+}
