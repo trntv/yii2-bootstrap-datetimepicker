@@ -2,6 +2,7 @@ Yii2 DateTimePicker
 ===================
 Datetimepicker widget for Yii2 framework
 Based on [https://github.com/Eonasdan/bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetimepicker)
+
 **NOTE** Here might be some bugs or follies. Contribute to remove them ;)
 
 
