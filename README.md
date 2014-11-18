@@ -35,5 +35,6 @@ Once the extension is installed, simply use it in your code by  :
 
 Options
 -------
-``format`` - datetime format
+``phpDatetimeFormat`` - PHP ICU datetime format
+``momentDatetimeFormat`` - Moment JS datetime format
 ``clientOptions`` - [http://eonasdan.github.io/bootstrap-datetimepicker/#options](http://eonasdan.github.io/bootstrap-datetimepicker/#options)
