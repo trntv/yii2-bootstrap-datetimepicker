@@ -12,6 +12,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FormatConverter;
 use yii\helpers\Html;
+use yii\helpers\Json;
 use yii\widgets\InputWidget;
 
 /**
@@ -63,7 +64,7 @@ class DatetimepickerWidget extends InputWidget{
                 : \Yii::$app->formatter->asDatetime($value, $this->phpDatetimeFormat);
         }
         DatetimepickerAsset::register($this->getView());
-        $this->getView()->registerJs('$("#'.$this->options['id'].'").datetimepicker('.json_encode($this->clientOptions).')');
+        $this->getView()->registerJs('$("#'.$this->options['id'].'").datetimepicker('.Json::encode($this->clientOptions).')');
     }
 
     /**
