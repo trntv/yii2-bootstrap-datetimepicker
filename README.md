@@ -14,7 +14,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist trntv/yii2-bootstrap-datetimepicker "*"
+php composer.phar require trntv/yii2-bootstrap-datetimepicker
 ```
 
 or add
@@ -32,7 +32,7 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= $form->field($model, 'attribute')->widget('trntv\yii\datetimepicker\DatetimepickerWidget'); ?>
+<?= $form->field($model, 'attribute')->widget('trntv\yii\datetimepicker\DatetimepickerWidget', [ ... options ...]); ?>
 ```
 
 Options

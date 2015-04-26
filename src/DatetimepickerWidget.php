@@ -1,33 +1,34 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zein
- * Date: 7/4/14
- * Time: 4:38 PM
- */
-
 namespace trntv\yii\datetimepicker;
 
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
-use yii\helpers\FormatConverter;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\widgets\InputWidget;
 
 /**
  * Class DatetimepickerWidget
- * @package common\components\widgets\datetimepicker
+ * @package yii2-bootstrap-datetimepicker
  */
 class DatetimepickerWidget extends InputWidget{
     /**
      * @var array
      */
     public $clientOptions = [];
+    /**
+     * @var string
+     */
     public $phpDatetimeFormat = 'dd.MM.yyyy, HH:mm';
+    /**
+     * @var
+     */
     public $momentDatetimeFormat;
 
-    protected $_phpMomentMapping = array(
+    /**
+     * @var array
+     */
+    protected $_phpMomentMapping = [
         "yyyy-MM-dd'T'HH:mm:ssZZZZZ" => 'YYYY-MM-DDTHH:mm:ssZZ', // 2014-05-14T13:55:01+02:00
         "yyyy-MM-dd"                 => 'YYYY-MM-DD',            // 2014-05-14
         "dd.MM.yyyy, HH:mm"          => 'DD.MM.YYYY, HH:mm',     // 14.05.2014, 13:55, German format without seconds
@@ -35,7 +36,7 @@ class DatetimepickerWidget extends InputWidget{
         "dd/MM/yyyy"                 => 'DD/MM/YYYY',            // 14/05/2014, British ascending format
         "dd/MM/yyyy HH:mm"           => 'DD/MM/YYYY HH:mm',      // 14/05/2014 13:55, British ascending format with time
         "EE, dd/MM/yyyy HH:mm"       => 'ddd, DD/MM/YYYY HH:mm', // Wed, 14/05/2014 13:55, includes day of week in British format
-    );
+    ];
 
     /**
      * @throws \yii\base\InvalidConfigException
@@ -49,13 +50,14 @@ class DatetimepickerWidget extends InputWidget{
         }
         // Init default clientOptions
         $this->clientOptions = ArrayHelper::merge([
-            'language'=>\Yii::$app->language,
-            'format'=>$this->momentDatetimeFormat
+            'useCurrent' => true,
+            'locale' => array_shift(explode(\Yii::$app->language,'-')),
+            'format' => $this->momentDatetimeFormat
         ], $this->clientOptions);
 
         // Init default options
         $this->options = ArrayHelper::merge([
-            'class'=>'form-control',
+            'class' => 'form-control',
         ], $this->options);
 
         if($value !== null){
@@ -64,7 +66,8 @@ class DatetimepickerWidget extends InputWidget{
                 : \Yii::$app->formatter->asDatetime($value, $this->phpDatetimeFormat);
         }
         DatetimepickerAsset::register($this->getView());
-        $this->getView()->registerJs('$("#'.$this->options['id'].'").datetimepicker('.Json::encode($this->clientOptions).')');
+        $clientOptions = Json::encode($this->clientOptions);
+        $this->view->registerJs("$('#{$this->options['id']}').datetimepicker('{$clientOptions}')");
     }
 
     /**
