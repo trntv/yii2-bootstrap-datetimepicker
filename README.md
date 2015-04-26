@@ -1,10 +1,11 @@
 Yii2 DateTimePicker
 ===================
-Datetimepicker widget for Yii2 framework
-Based on [https://github.com/Eonasdan/bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetimepicker)
+DateTime picker widget for Yii2 framework
+Based on [Eonasdan/bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetimepicker)
 
-**NOTE** Here might be some bugs or follies. Contribute to remove them ;)
-
+Demo
+----
+Since file kit is a part of [yii2-starter-kit](https://github.com/trntv/yii2-starter-kit) it's demo can be found in starter kit demo [here](http://backend.yii2-starter-kit.terentev.net/article/create).
 
 Installation
 ------------
@@ -41,4 +42,4 @@ Options
 
 ``momentDatetimeFormat`` - Moment JS datetime format
 
-``clientOptions`` - [http://eonasdan.github.io/bootstrap-datetimepicker/#options](http://eonasdan.github.io/bootstrap-datetimepicker/#options)
+``clientOptions`` - [see full list of available options](http://eonasdan.github.io/bootstrap-datetimepicker/#options)
