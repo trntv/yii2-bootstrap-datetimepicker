@@ -1,5 +1,4 @@
-Yii2 DateTimePicker
-===================
+# Yii2 DateTimePicker
 Datetimepicker widget for Yii2 framework
 Based on [https://github.com/Eonasdan/bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetimepicker)
 
@@ -26,19 +25,33 @@ or add
 to the require section of your `composer.json` file.
 
 
-Usage
------
+## Usage
 
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= $form->field($model, 'attribute')->widget('trntv\yii\datetimepicker\DatetimepickerWidget', [ ... options ...]); ?>
+<?php echo $form->field($model, 'attribute')->widget('trntv\yii\datetimepicker\DatetimepickerWidget', [ ... options ... ]); ?>
 ```
 
-Options
--------
+## Options
 ``phpDatetimeFormat`` - PHP ICU datetime format
 
 ``momentDatetimeFormat`` - Moment JS datetime format
 
 ``clientOptions`` - [http://eonasdan.github.io/bootstrap-datetimepicker/#options](http://eonasdan.github.io/bootstrap-datetimepicker/#options)
+
+## Examples
+```php
+<?php echo $form->field($model, 'datetime')->widget('trntv\yii\datetimepicker\DatetimepickerWidget', [ 
+    'phpDatetimeFormat' => 'yyyy-MM-dd\'T\'HH:mm:ssZZZZZ',
+    'clientOptions' => [
+        'minDate' => new \yii\web\JsExpression('new Date("2015-01-01")'),
+        'sideBySide' => true,
+        'widgetPositioning' => [
+           'horizontal' => 'auto'
+           'vertical' => 'auto'
+        ]
+    ]
+]); ?>
+```
+Full list of available client options see [here](http://eonasdan.github.io/bootstrap-datetimepicker/#options) 

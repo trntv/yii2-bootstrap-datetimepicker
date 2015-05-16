@@ -15,6 +15,8 @@ class DatetimepickerWidget extends InputWidget
 {
     /**
      * @var array
+     * Full list of available client options see here:
+     * @link http://eonasdan.github.io/bootstrap-datetimepicker/#options
      */
     public $clientOptions = [];
     /**
