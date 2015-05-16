@@ -2,7 +2,9 @@
 Datetimepicker widget for Yii2 framework
 Based on [https://github.com/Eonasdan/bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetimepicker)
 
-**NOTE** Here might be some bugs or follies. Contribute to remove them ;)
+Demo
+----
+Since file kit is a part of [yii2-starter-kit](https://github.com/trntv/yii2-starter-kit) it's demo can be found in starter kit demo [here](http://backend.yii2-starter-kit.terentev.net/article/create).
 
 
 Installation
@@ -30,7 +32,11 @@ to the require section of your `composer.json` file.
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?php echo $form->field($model, 'attribute')->widget('trntv\yii\datetimepicker\DatetimepickerWidget', [ ... options ... ]); ?>
+<?php echo $form->field($model, 'attribute')->widget(
+        'trntv\yii\datetimepicker\DatetimepickerWidget', 
+        [ ... options ... ]
+    ); 
+?>
 ```
 
 ## Options
