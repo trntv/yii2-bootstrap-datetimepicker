@@ -6,6 +6,10 @@ Demo
 ----
 Since file kit is a part of [yii2-starter-kit](https://github.com/trntv/yii2-starter-kit) it's demo can be found in starter kit demo [here](http://backend.yii2-starter-kit.terentev.net/article/create).
 
+Login: ``webmaster``
+
+Password: ``webmaster``
+
 
 Installation
 ------------
